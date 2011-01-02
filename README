@@ -1,0 +1,15 @@
+To build and install:
+
+    $ apxs -c -i mod_reqcpulog.c
+
+Activate it in Apache's httpd.conf file for instance
+as follows:
+
+    # httpd.conf
+    LoadModule reqcpulog_module modules/mod_reqcpulog.so
+
+Restart Apache:
+
+    $ apachectl restart
+
+Add %{reqcpu-user}n and/or %{reqcpu-sys}n to your CustomLog format.
